@@ -5,7 +5,8 @@
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
- 
+
+ <!-- 
   <script>
     function init() {
         window.addEventListener('scroll', function(e){
@@ -22,19 +23,31 @@
         });
     }
     window.onload = init();
-</script>
+</script> -->
 </head>
 <body>
+<%# if flash[:notice] %>
+    <%#= flash[:notice] %>
+<%# end %>
 
 <%= yield %>
 
+
+  <script type="text/javascript">
+     function googleTranslateElementInit() {
+       new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'de,en,es,fr,it,pt,ro,ru,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                                           }
+  </script>
+   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
 </body>
+<div> 
 <footer>
 
 
-	<% if user_signed_in?%>     
- <%= link_to "Logout", destroy_user_session_path, method: "DELETE" %> 
-<% end %>
+
 
     <!-- begin olark code -->
 <script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){

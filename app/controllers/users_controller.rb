@@ -11,5 +11,9 @@ class UsersController < ApplicationController
 		
 	end
 
+	def user_form
+
+	end
+
 
 end

@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
--------------------------------------------------------------- */
 
 
 
@@ -29,30 +27,45 @@ a:hover {
  */
 
 html,
-body {
-/*css for full size background image*/
-  background: url(http://bunow.com/wp-content/uploads/2013/10/the-statue-of-liberty.jpg) no-repeat center center fixed; 
+// body {
+// css for full size background image
+
+  
+
+ 
+ 
+// }
+.estatua {
+   background: url(http://bunow.com/wp-content/uploads/2013/10/the-statue-of-liberty.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  
-  height: 100%;
-  background-color: #060;
+    height: 100%;
+  /*background-color: #060;*/
   color: #fff;
-  text-align: center;
+
+ text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
- 
+}
+.descripcion {
+    position: absolute;
+    left: 100px;
+    top: 450px; 
+   text-align: center;
+   margin-left: 400px;
+   margin-right: 400px;
+
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
   width: 100%;
-  height: 100%; /* For at least Firefox */
+  height: 100%; 
   min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+ /* -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);*/
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -265,4 +278,36 @@ body {
 .btn3d.btn-magick:active, .btn3d.btn-magick.active {
     box-shadow:0 0 0 1px #9a00cd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
     background-color: #bb39d7;
+}
+
+.form_fiance{
+  // padding: 0 40%;
+  background-color:black;
+  opacity:0.7;
+  margin:0 40%;
+  border-radius: 5px;
+
+}
+
+.pasaporte {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:-1;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  .pasaporte {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
 }

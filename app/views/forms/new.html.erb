@@ -5,14 +5,16 @@
 		<% end %>
 	</ul>
 <% end %>
+<div class="form_fiance">
 <%= form_for [@user, @form] do |f| %>
-	<%= f.label "Is the petitioner a U.S citizen?"%><br>
-	<%= f.label :answer, "True" %>
+	<%= f.label :answer, 'Is the petitioner a U.S citizen?' %>:
+	<%#= f.label "Is the petitioner a U.S citizen?"%><br>
+	<%= f.label :answer, 'True' %>
 	<%= f.radio_button :answer, "true", :value=> true%>
 	<%= f.label :answer, "False" %>
 	<%= f.radio_button :answer, "false", :value=> false%>
 	<br>
-	<%= f.label "Do you intend to marry within 90 days of your fiancė's admission to the U.S and you are bot free to marry?" %><br>
+	<%= f.label :answerb, "Do you intend to marry within 90 days of your fiancė's admission to the U.S and you are bot free to marry?" %><br>
 	<%= f.label :answerb, "True" %>
 	<%= f.radio_button :answerb, "true", :value=> true%>
 	<%= f.label :answerb, "False" %>
@@ -33,3 +35,4 @@
 	<%= f.submit 'Save' %>
 	<%= link_to('Back', user_forms_path(@user)) %>
 <% end %>
+</div>

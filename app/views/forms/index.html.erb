@@ -1,4 +1,6 @@
+<div class="form_page">
 <h1><%= @user.name %></h1>
+<img src="/assets/pasaporte.jpg" alt="Passport" class="pasaporte">
 
 <ul>
 	<% @forms.each do |form| %>
@@ -13,7 +15,9 @@
 	<% end %>
 </ul>
 <div>
-<%= link_to('New entry', new_user_form_path(@user)) %>
+<%= link_to('Fiancé Form', new_user_form_path(@user)) %>
 <br>
-<%= link_to('Back to projects',  root_path) %>
+<%= link_to('Back', users_user_form_path) %>
+ <%= link_to "Logout", destroy_user_session_path, data: { method: :delete } %>
 </div>
+ </div>  

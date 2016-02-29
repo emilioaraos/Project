@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
-   root 'site#home'
+   get 'site/home'
    get 'site/about'
    get 'site/contact'
    get 'site/perse'
+   get '/users/user_form' => 'users#user_form'
+
+  unauthenticated :user do 
+    root to: "site#home", as: :authenticated_root
+  end
+
+  authenticated :user do
+    root to: "users#user_form", as: :unauthenticated_root
+  end
 
   devise_for :users, controllers: { registrations: "registrations" }
-resources(:users, only: [:show, :new, :create, :index]) do
+  resources(:users, only: [:show, :new, :create, :index]) do
   resources(:forms, only: [:new, :create, :index, :update, :edit, :destroy])
 
    get '/users/:id', to: 'users#show'

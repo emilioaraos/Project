@@ -2,7 +2,18 @@ class RegistrationsController < Devise::RegistrationsController
 	protected
 
 	def after_sign_up_path_for(resource)
-		puts "--------0000000000000000000000000000*************"
-		"/site/about"
+
+		"/users/user_form"
+	end
+
+	
+	def after_sign_in_path_for(resource)
+	
+		"/users/user_form"
+	end
+
+	def after_sign_out_path_for(resource)
+	
+		root_path
 	end
 end
