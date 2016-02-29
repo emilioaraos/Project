@@ -1,0 +1,19 @@
+<h1><%= @user.name %></h1>
+
+<ul>
+	<% @forms.each do |form| %>
+		<li>
+			<%= form.answer%> 
+			<%= form.answerb%> 
+			<%= form.answerc %>
+			<%= form.answerd %>
+			<%= link_to('Edit', edit_user_form_path(@user, form)) %>
+			<%= link_to('Delete', user_form_path(@user, form), method: :delete, data: {confirm: 'Are you sure?'}) %>
+		</li>
+	<% end %>
+</ul>
+<div>
+<%= link_to('New entry', new_user_form_path(@user)) %>
+<br>
+<%= link_to('Back to projects',  root_path) %>
+</div>
