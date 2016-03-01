@@ -12,12 +12,12 @@
 
 
                               <li class="active">
-                                 <a href="/">Home</a>
+                                 <a href="/" class="home">Home</a>
                             
                                   <a href="/site/about">About</a>
-                                  </li>
+                               
 
-                               <li>
+                               
                                    <a href="/site/contact">Contact</a>
                                </li>
                                <li>
@@ -39,16 +39,20 @@
    
          <p class="lead">In this site you will be able to learn more about certain  procedures  such as naturalization, replacements and renewal of your permanent resident card("Green Card"),employment authorization, fiancee visa for those who are outside of the states, among others.
           Disclosure:
-         THE INFORMATION PROVIDED DOES NOT REPRESENT LEGAL ADVISE.       
+         THE INFORMATION PROVIDED DOES NOT REPRESENT LEGAL ADVISE AND IS INTENDED FOR EDUCATIONAL PURPOSES ONLY.       
          </p>
 
 
 
-       <!--  <p class="lead"><a class="btn btn-lg btn-info" href="#">Log in/Sign up</a></p> -->
+ 
        			 <% unless user_signed_in?%> 
-    <button type="button" class="btn btn-primary btn-lg btn3d"> <%=link_to "Login", new_user_session_path%></button>
-    <%#=link_to "Login", new_user_session_path%>
-     <button type="button" class="btn btn-primary btn-lg btn3d">  <%=link_to "Signup", new_user_registration_path%></button>
+    
+        <a href="users/sign_in"><button type="button" class="btn btn-primary btn-lg btn3d">LogIn</button></a>
+
+
+
+
+     <a href="users/sign_up"><button type="button" class="btn btn-primary btn-lg btn3d">SignUp</button></a> 
 
             <% end %>
 
